@@ -1,27 +1,26 @@
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq;
 using Bibliotekssystem.Models;
 
 
 namespace Bibliotekssystem.Data
 {
-    public class DataContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
-        public DbSet<BookAuthor> BookAuthors { get; set; }
         public DbSet<Loan> Loans { get; set; }
+        public DbSet<BookAuthor> bookAuthors {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=library.db");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=Bibliotekssystem;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BookAuthor>()
-                .HasKey(ba => new { ba.BookId, ba.AuthorId });
+                .HasKey(ba => new { a.BookId, ba.AuthorId });
 
             modelBuilder.Entity<BookAuthor>()
                 .HasOne(ba => ba.Book)
