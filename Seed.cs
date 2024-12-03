@@ -11,8 +11,8 @@ public class Seed
         {
             if(!context.Books.Any())
             {
-                var book1 = new Book { Title = "Bok 1" };
-                var book2 = new Book { Title = "Bok 2" };
+                var book1 = new Book { Title = "The Great Gatsby" };
+                var book2 = new Book { Title = "To Kill a Mockingbird" };
                 context.Books.AddRange(book1, book2);
                 context.SaveChanges();
             }
@@ -33,10 +33,10 @@ public class Seed
             }
             if (!context.BookAuthors.Any())
             {
-                var book1 = context.Books.FirstOrDefault(b => b.Title == "Bok 1");
+                var book1 = context.Books.FirstOrDefault(b => b.Title == "The Great Gatsby");
                 if (book1 == null)
                 {
-                    Console.WriteLine("Book 1 not found");
+                    Console.WriteLine("The Great Gatsby not found");
                     return;
                 }
                 var author1 = context.Authors.FirstOrDefault(a => a.Name == "Forfatter 1");
@@ -46,10 +46,10 @@ public class Seed
                     return;
                 }
  
-                var book2 = context.Books.FirstOrDefault(b => b.Title == "Bok 2");
+                var book2 = context.Books.FirstOrDefault(b => b.Title == "To Kill a Mockingbird");
                 if (book2 == null)
                 {
-                    Console.WriteLine("Book 2 not found");
+                    Console.WriteLine("To Kill a Mockingbird not found");
                     return;
                 }
 
