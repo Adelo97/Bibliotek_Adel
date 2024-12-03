@@ -57,12 +57,9 @@ namespace BibliotekSystem
 
                 static void ViewBooks()
                 {
-                    // Here you would normally fetch and display the list of books from your database.
                     Console.WriteLine("Displaying the list of books:");
-                    // Example book list (replace with actual data fetching)
                     Console.WriteLine("1. The Great Gatsby");
                     Console.WriteLine("2. To Kill a Mockingbird");
-                    // Add more books as needed
                 }
            
     }
