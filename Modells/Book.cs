@@ -5,14 +5,11 @@ namespace Bibliotekssystem.Models
 {
     public class Book
     {
-        public int Id { get; set; }
+        public int BookId { get; set; }
         public string Title { get; set; }
-        public ICollection<Author> Authors { get; set; }
-        public ICollection<Loan> Loans { get; set; } = new List<Loan>();
+        public ICollection<BookAuthors> BookAuthors { get; set; }
+        public ICollection<Loan> Loan { get; set; }
     }
 
-    public class Author
-    {
-        public object Book { get; set; }
-    }
+   
 }
