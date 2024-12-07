@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Bibliotekssystem.Data;
 
+
 public class Seed
 {
     public static void Run()
@@ -39,10 +40,10 @@ public class Seed
                     Console.WriteLine("The Great Gatsby not found");
                     return;
                 }
-                var author1 = context.Authors.FirstOrDefault(a => a.Name == "Forfatter 1");
+                var author1 = context.Authors.FirstOrDefault(a => a.Name == "Jack Daniel");
                 if (author1 == null)
                 {
-                    Console.WriteLine("Author 1 not found");
+                    Console.WriteLine("Jack Daniel not found");
                     return;
                 }
  
@@ -53,10 +54,10 @@ public class Seed
                     return;
                 }
 
-                var author2 = context.Authors.FirstOrDefault(a => a.Name == "Forfatter 2");
+                var author2 = context.Authors.FirstOrDefault(a => a.Name == "Elon Musk");
                 if (author2 == null)
                 {
-                    Console.WriteLine("Author 2 not found");
+                    Console.WriteLine("Elon Musk not found");
                     return;
                 }
  
