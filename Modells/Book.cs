@@ -9,6 +9,8 @@ namespace Bibliotekssystem.Models
         public string Title { get; set; }
         public ICollection<BookAuthors> BookAuthors { get; set; }
         public ICollection<Loan> Loan { get; set; }
+
+       
     }
 
    

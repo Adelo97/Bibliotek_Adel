@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bibliotekssystem.uppgiften")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccb804582e33b28a5a310d7b0188c970fcac7335")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34abfaca5531e164a313ae7cbb31892ac6633da8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bibliotekssystem.uppgiften")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bibliotekssystem.uppgiften")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

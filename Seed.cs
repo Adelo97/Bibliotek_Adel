@@ -40,7 +40,7 @@ public class Seed
                     Console.WriteLine("The Great Gatsby not found");
                     return;
                 }
-                var author1 = context.Authors.FirstOrDefault(a => a.Name == "Jack Daniel");
+                var author1 = context.Authors.FirstOrDefault(a => a.Name == "Forfatter 1");
                 if (author1 == null)
                 {
                     Console.WriteLine("Jack Daniel not found");

@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using Bibliotekssystem.Models;
-
 
 namespace Bibliotekssystem.Data
 {
@@ -10,18 +8,20 @@ namespace Bibliotekssystem.Data
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Loan> Loans { get; set; }
-        public DbSet<BookAuthors> BookAuthors {get; set;}
+        public DbSet<BookAuthors> BookAuthors { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=ADEL;Database=Bibliotekssystem;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=ADEL;Database=BibliotekssystemDB;Trusted_Connection=True;TrustServerCertificate=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Configure the composite key for BookAuthors
             modelBuilder.Entity<BookAuthors>()
                 .HasKey(ba => new { ba.BookId, ba.AuthorId });
 
+            // Configure relationships for BookAuthors
             modelBuilder.Entity<BookAuthors>()
                 .HasOne(ba => ba.book)
                 .WithMany(b => b.BookAuthors)
@@ -32,10 +32,11 @@ namespace Bibliotekssystem.Data
                 .WithMany(a => a.BookAuthors)
                 .HasForeignKey(ba => ba.AuthorId);
 
+            // Configure Loan relationship with Book
             modelBuilder.Entity<Loan>()
                 .HasOne(l => l.Book)
-                .WithMany(b => b.Loan)
-                .HasForeignKey(l => l.BookId);  
+                .WithMany(b => b.Loan) // Ensure this matches the navigation property in Book
+                .HasForeignKey(l => l.BookId);
         }
     }
 }
